@@ -2,17 +2,13 @@ package com.example.Quest.App.Spring.entities;
 
 import jakarta.persistence.Entity;
 
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-
-
 @Entity
 @Table(name = "user")
-
 
 public class User {
 	
@@ -21,10 +17,11 @@ public class User {
 	Long id;
 	String userName;
 	String password;
+	
     public User() {
     }
 
-    // Getter ve Setter methods
+    // Getter and Setter methods
     public Long getId() {
         return id;
     }
