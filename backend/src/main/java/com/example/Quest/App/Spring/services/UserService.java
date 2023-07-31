@@ -13,22 +13,22 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
 	UserRepository userRepository;
-
+	
 	public UserService(UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
 
 	public List<User> getAllUsers() {
-		// I connect to repo this line and use findAll method
+		// I connect to userRepository this line and use findAll method
 		return userRepository.findAll();
+	}
+	
+	public User getOneUserById(Long userId) {
+		return userRepository.findById(userId).orElse(null);
 	}
 
 	public User saveOneUser(User newUser) {
 		return userRepository.save(newUser);
-	}
-
-	public User getOneUser(Long userId) {
-		return userRepository.findById(userId).orElse(null);
 	}
 
 	public User updateOneUser(Long userId, User newUser) {
@@ -48,5 +48,6 @@ public class UserService {
 	public void deleteById(Long userId) {
 		 userRepository.deleteById(userId);
 	}
+
 
 }
