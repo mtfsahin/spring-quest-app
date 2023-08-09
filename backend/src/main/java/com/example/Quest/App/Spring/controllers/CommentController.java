@@ -1,6 +1,6 @@
 package com.example.Quest.App.Spring.controllers;
 
-import java.util.List;ü
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Quest.App.Spring.entities.Comment;
 import com.example.Quest.App.Spring.request.CommentCreateRequest;
+import com.example.Quest.App.Spring.request.CommentUpdateRequest;
 import com.example.Quest.App.Spring.services.CommentService;
-import com.example.Quest.App.Spring.services.CommentUpdateRequest;
 
 @RestController
 @RequestMapping("/comments")
@@ -45,12 +45,11 @@ public class CommentController {
 	public Comment createOneComment(@RequestBody CommentCreateRequest request) {
 		return commentService.createOneComment(request);
 	}
-	
+
 	@PutMapping("/{commentId}")
-	public Comment updateOneComment(@PathVariable Long commentId, @RequestBody CommentUpdateRequest request) {
+	public Comment updateOneComment(@PathVariable Long commentId, @RequestBody CommentUpdateRequest request){
 		return commentService.updateOneCommentById(commentId, request);
 	}
-	
 	
 	
 	

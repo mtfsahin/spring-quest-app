@@ -3,15 +3,14 @@ package com.example.Quest.App.Spring.services;
 import java.util.List;
 import java.util.Optional;
 
-
 import org.springframework.stereotype.Service;
 
 import com.example.Quest.App.Spring.entities.Comment;
 import com.example.Quest.App.Spring.entities.Post;
 import com.example.Quest.App.Spring.entities.User;
-
 import com.example.Quest.App.Spring.repos.CommentRepository;
 import com.example.Quest.App.Spring.request.CommentCreateRequest;
+import com.example.Quest.App.Spring.request.CommentUpdateRequest;
 
 @Service
 public class CommentService {
@@ -55,6 +54,22 @@ public class CommentService {
 		}else	
 			return null;
 	}
+
+	public Comment updateOneCommentById(Long commentId, CommentUpdateRequest updateRequest) {
+		Optional<Comment> comment = commentRepository.findById(commentId);
+		if(comment.isPresent()) {
+			Comment toUpdate = comment.get();
+			toUpdate.setText(updateRequest.getText());
+			commentRepository.save(toUpdate);
+			return toUpdate;
+		}
+		return null;
+	}
+
+	public void deleteOnePostById(Long commentId) {
+		commentRepository.deleteById(commentId);
+	}
+	
 	
 
 }
