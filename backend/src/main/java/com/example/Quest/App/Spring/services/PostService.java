@@ -64,6 +64,4 @@ public class PostService {
 		postRepository.deleteById(postId);
 	}
 	
-	
-	
 }

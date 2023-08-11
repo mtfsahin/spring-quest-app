@@ -1,12 +1,11 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
+
+import HomeComponent from "./components/HomeComponent/HomeComponent.vue";
+
 </script>
 
 <template>
-  <div>
-    hello
-  </div>
+  <HomeComponent/>
 </template>
 
 <style scoped>
