@@ -3,6 +3,7 @@ package com.example.Quest.App.Spring.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,6 +19,7 @@ import com.example.Quest.App.Spring.request.PostCreateRequest;
 import com.example.Quest.App.Spring.request.PostUpdateRequest;
 import com.example.Quest.App.Spring.services.PostService;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/posts")
 public class PostController {

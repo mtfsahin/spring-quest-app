@@ -37,7 +37,7 @@ public class CommentService {
 	}
 	
 	public Comment getOneCommentById(Long commentId) {
-		return commentRepository.f indById(commentId).orElse(null);
+		return commentRepository.findById(commentId).orElse(null);
 	}
 
 	public Comment createOneComment(CommentCreateRequest request) {

@@ -1,21 +1,27 @@
 <template>
     <header>
         <nav class="navbar">
-            <div class="logo">LOGO</div>
+            <div class="logo">QUEST APP</div>
 
             <ul class="nav-list">
                 <li v-for="page in pages" :key="page.id" class="nav-item">
                     <a :href="page.url">{{ page.title }}</a>
                 </li>
-                <a class="login-button">Login</a>
+                <ButtonComponent>Login</ButtonComponent>
             </ul>
         </nav>
     </header>
 </template>
 
 <script>
+
+import ButtonComponent from '../ButtonComponent/ButtonComponent.vue';
+
 export default {
     name: 'Header',
+    components:{
+        ButtonComponent,
+    },
     data() {
         return {
             pages: [
@@ -42,7 +48,7 @@ export default {
     padding: 10px 20px;
     background-color: #3F4E4F;
     border-radius: 0 0 20px 20px;
-    border-width: 0 4px 4px 4px;
+    border-width: 1px 4px 4px 4px;
     border-color: #DCD7C9;
     border-style: solid;
 }
@@ -50,6 +56,7 @@ export default {
 .logo {
     color: #DCD7C9;
     padding: 10px;
+    font-weight: bold;
 }
 
 .nav-list {
@@ -63,25 +70,6 @@ export default {
 .nav-item {
     padding: 10px;
 }
-
-.login-button {
-    background-color: #A27B5C;
-    padding: 10px;
-    border-radius: 5px;
-    border-style: dashed;
-    cursor: pointer;
-}
-
-.login-button:hover {
-    background-color: #DCD7C9;
-    transition: 0.4s;
-    padding-left: 10px;
-    color: #3F4E4F;
-    padding-right: 10px;
-    border-radius: 5px;
-    border-style: dashed;
-}
-
 
 p {
     margin-top: 10px;
